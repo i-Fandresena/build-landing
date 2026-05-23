@@ -14,6 +14,15 @@ export default {
     },
     extend: {
       colors: {
+        icpp: {
+          navy: "#001947",
+          dark: "#00162D",
+          "blue-light": "#00AEF7",
+          "blue-cyan": "#9FF4FF",
+          "blue-mid": "#3AADFF",
+          white: "#F9FCFE",
+          green: "#0BE365",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
