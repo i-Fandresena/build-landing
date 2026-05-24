@@ -118,3 +118,59 @@
 .bg-orb-blur-lg {
   filter: blur(163px);
 }
+
+/* ── Bento Grid ──────────────────────────────────────── */
+.bento-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+
+.bento-cell {
+  min-height: 220px;
+}
+
+@media (min-width: 640px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-photo-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+    min-height: 400px;
+  }
+  .bento-photo-office {
+    grid-column: span 1;
+    grid-row: span 2;
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, minmax(220px, auto));
+    gap: 16px;
+  }
+
+  /* 1 — 80% card */
+  .bento-stat80       { grid-column: 1; grid-row: 1; }
+  /* 2 — Tall photo */
+  .bento-photo-tall   { grid-column: 2; grid-row: 1 / span 2; min-height: 0; }
+  /* 3 — 39€ dark card */
+  .bento-stat39       { grid-column: 3; grid-row: 1; }
+  /* 4 — < 3% card */
+  .bento-stat3        { grid-column: 4; grid-row: 1; }
+  /* 5 — Office photo */
+  .bento-photo-office { grid-column: 1; grid-row: 2 / span 2; min-height: 0; }
+  /* 6 — Two people photo */
+  .bento-photo-duo    { grid-column: 3; grid-row: 2; }
+  /* 7 — Computer photo */
+  .bento-photo-computer { grid-column: 4; grid-row: 2; }
+  /* 8 — 1 500€ card */
+  .bento-stat1500     { grid-column: 2; grid-row: 3; }
+  /* 9 — 3,7M card */
+  .bento-stat37       { grid-column: 3; grid-row: 3; }
+  /* 10 — 40 ans card */
+  .bento-stat40       { grid-column: 4; grid-row: 3; }
+}

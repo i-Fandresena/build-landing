@@ -291,6 +291,7 @@ function StarIcon() {
 
 export default function Index() {
   return (
+    <>
     <div className="min-h-screen bg-[#001947] overflow-x-hidden">
       {/* Background orbs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
@@ -482,5 +483,109 @@ export default function Index() {
         </div>
       </section>
     </div>
+    <StatsBentoGrid />
+    </>
+  );
+}
+
+function StatsBentoGrid() {
+  return (
+    <section className="bg-white py-16 lg:py-24">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-10">
+        <div className="bento-grid">
+
+          {/* 1 — 80% stat card */}
+          <div className="bento-cell bento-stat80 rounded-2xl p-7 lg:p-8 bg-[#DDF1FA] flex flex-col justify-between">
+            <div>
+              <div className="text-[#001947] font-bold leading-none mb-4 font-display" style={{ fontSize: 'clamp(2.5rem,5vw,3.5rem)' }}>80%</div>
+              <p className="text-[#001947] font-bold text-base lg:text-lg leading-snug">des TPE non conformes à leurs obligations légales</p>
+            </div>
+            <p className="text-[#001947]/50 text-sm mt-5">INRS 2024</p>
+          </div>
+
+          {/* 2 — Tall photo — col 2, rows 1–2 */}
+          <div className="bento-cell bento-photo-tall rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=800&fit=crop&q=80"
+              alt="Formation ICPP en entreprise"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 3 — 39 € dark card */}
+          <div className="bento-cell bento-stat39 rounded-2xl p-7 lg:p-8 bg-[#001947] flex flex-col justify-between">
+            <div>
+              <div className="font-bold leading-none mb-4 gradient-text-cyan font-display" style={{ fontSize: 'clamp(2.5rem,5vw,3.5rem)' }}>39 €</div>
+              <p className="text-white font-bold text-base lg:text-lg leading-snug">par mois chez ICPP vs 2 000 à 4 000 € pour un cabinet spécialisé</p>
+            </div>
+            <p className="text-white/50 text-sm mt-5">ICPP 2026</p>
+          </div>
+
+          {/* 4 — < 3% card */}
+          <div className="bento-cell bento-stat3 rounded-2xl p-7 lg:p-8 bg-[#DDF1FA] flex flex-col justify-between">
+            <div>
+              <div className="font-bold leading-none mb-4 gradient-text-cyan font-display" style={{ fontSize: 'clamp(2.5rem,5vw,3.5rem)'}}>{"< 3%"}</div>
+              <p className="text-[#001947] font-bold text-base lg:text-lg leading-snug">des TPE transmettent leur DUERP au SPST comme la loi l'impose</p>
+            </div>
+            <p className="text-[#001947]/50 text-sm mt-5">Décret 18/03/2022</p>
+          </div>
+
+          {/* 5 — Office photo — col 1, rows 2–3 */}
+          <div className="bento-cell bento-photo-office rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=600&fit=crop&q=80"
+              alt="Réunion d'équipe en entreprise"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 6 — Two people photo — col 3, row 2 */}
+          <div className="bento-cell bento-photo-duo rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&q=80"
+              alt="Consultation expert ICPP"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 7 — Computer photo — col 4, row 2 */}
+          <div className="bento-cell bento-photo-computer rounded-2xl overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop&q=80"
+              alt="Plateforme numérique ICPP"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* 8 — 1 500 € card — col 2, row 3 */}
+          <div className="bento-cell bento-stat1500 rounded-2xl p-7 lg:p-8 bg-[#DDF1FA] flex flex-col justify-between">
+            <div>
+              <div className="font-bold leading-none mb-4 gradient-text-cyan font-display" style={{ fontSize: 'clamp(2rem,4vw,2.8rem)' }}>1 500 €</div>
+              <p className="text-[#001947] font-bold text-sm lg:text-base leading-snug">d'amende par salarié sans DUERP 3 000 € en récidive</p>
+            </div>
+            <p className="text-[#001947]/50 text-sm mt-5">Art. R4741-1 Code du travail</p>
+          </div>
+
+          {/* 9 — 3,7M card — col 3, row 3 */}
+          <div className="bento-cell bento-stat37 rounded-2xl p-7 lg:p-8 bg-[#DDF1FA] flex flex-col justify-between">
+            <div>
+              <div className="text-[#001947] font-bold leading-none mb-4 font-display" style={{ fontSize: 'clamp(2.5rem,5vw,3.5rem)' }}>3,7M</div>
+              <p className="text-[#001947] font-bold text-base lg:text-lg leading-snug">de TPE françaises concernées 0 solution tech adaptée avant ICPP</p>
+            </div>
+            <p className="text-[#001947]/50 text-sm mt-5">INSEE 2024</p>
+          </div>
+
+          {/* 10 — 40 ans card — col 4, row 3 */}
+          <div className="bento-cell bento-stat40 rounded-2xl p-7 lg:p-8 bg-[#C2EAFE] flex flex-col justify-between">
+            <div>
+              <div className="font-bold leading-none mb-4 gradient-text-cyan font-display" style={{ fontSize: 'clamp(2.5rem,5vw,3.5rem)' }}>40 ans</div>
+              <p className="text-[#001947] font-bold text-base lg:text-lg leading-snug">de conservation numérique obligatoire votre classeur papier ne suffit plus</p>
+            </div>
+            <p className="text-[#001947]/50 text-sm mt-5">Loi 2021-1018</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
   );
 }
