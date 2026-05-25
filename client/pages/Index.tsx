@@ -484,6 +484,7 @@ export default function Index() {
       </section>
     </div>
     <StatsBentoGrid />
+    <PromesseSection />
     </>
   );
 }
@@ -584,6 +585,150 @@ function StatsBentoGrid() {
             <p className="text-[#001947]/50 text-sm mt-5">Loi 2021-1018</p>
           </div>
 
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PromesseSection() {
+  const withoutICPP = [
+    "Vous ne savez pas si vos documents sont conformes",
+    "Vous ignorez les nouvelles obligations légales 2025",
+    "Votre DUERP est sur papier ou introuvable",
+    "Aucun plan d'action formalisé ni suivi",
+    "Vous perdez des heures sur de la paperasse",
+    "Vous espérez ne pas être contrôlé",
+    "En cas d'accident, vous êtes exposé personnellement",
+  ];
+
+  const withICPP = [
+    "Un expert vous contacte, rien à préparer",
+    "Votre DUERP numérique est rédigé, hébergé, à jour",
+    "Chaque changement est géré en un clic",
+    "Alertes automatiques si une action est requise",
+    "En cas de contrôle, tout est en ordre",
+    "Si une amende tombe, c'est ICPP qui paie",
+  ];
+
+  return (
+    <section className="bg-white py-20 lg:py-28 overflow-hidden relative">
+      {/* Decorative blue shape — right edge */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none select-none hidden lg:block">
+        <svg width="180" height="420" viewBox="0 0 180 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M180 0H60C26.863 0 0 26.863 0 60v300c0 33.137 26.863 60 60 60h120V0z"
+            fill="url(#promo_grad)"
+          />
+          <defs>
+            <linearGradient id="promo_grad" x1="0" y1="0" x2="180" y2="420" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#1780FD" />
+              <stop offset="1" stopColor="#002ABD" />
+            </linearGradient>
+          </defs>
+        </svg>
+        {/* Large ICPP logo mark */}
+        <div className="absolute top-1/2 -translate-y-1/2 right-4 opacity-30">
+          <svg width="100" height="85" viewBox="0 0 39 33" fill="none">
+            <path d="M8.76072 0.50611C9.12338 0.180397 9.59532 0 10.0848 0H32.8738C33.3792 0 33.8653 0.192358 34.2318 0.53735L37.9971 4.08231C38.8154 4.85268 38.8154 6.14524 37.9971 6.9156L12.0394 31.3359C11.2806 32.0496 10.0915 32.0518 9.33002 31.3409L5.46755 27.735C4.65104 26.9728 4.63986 25.6899 5.44297 24.9138L16.1735 14.5438C17.4397 13.3202 16.5655 11.1909 14.797 11.1909H1.97567C0.171967 11.1909 -0.684888 8.98933 0.651632 7.78898L8.76072 0.50611Z" fill="white"/>
+            <path d="M28.2096 18.6377C28.2096 18.189 28.3655 17.7539 28.651 17.4056L29.1156 16.8389C29.3431 16.5615 29.6845 16.4004 30.0452 16.4004C30.3656 16.4004 30.6726 16.5276 30.8977 16.7536L37.3759 23.2581C37.7401 23.6238 37.9443 24.1169 37.9443 24.6307V30.268C37.9443 31.3471 37.0615 32.222 35.9726 32.222H30.1813C29.0924 32.222 28.2096 31.3471 28.2096 30.268V18.6377Z" fill="white"/>
+          </svg>
+        </div>
+      </div>
+
+      <div className="max-w-[1000px] mx-auto px-6 lg:px-10 relative z-10">
+        {/* Badge */}
+        <div className="flex justify-center mb-8">
+          <span className="px-5 py-2 rounded-full bg-[#EDF4FF] text-[#3AADFF] text-sm font-medium border border-[#CCDFFF]">
+            Notre promesse
+          </span>
+        </div>
+
+        {/* Heading */}
+        <h2
+          className="text-center font-bold text-[#001947] leading-tight mb-6"
+          style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)" }}
+        >
+          Vous n'avez{" "}
+          <span className="gradient-text-cyan">rien à faire.</span>
+          <br />
+          Vraiment.
+        </h2>
+
+        {/* Subtitle */}
+        <p className="text-center text-[#001947]/70 text-base lg:text-lg max-w-2xl mx-auto mb-14 leading-relaxed">
+          DUERP, plan d'action PAPRIPACT, formations, veille 24/7 — nos experts s'occupent
+          de tout. Si malgré tout vous êtes contrôlé, c'est nous qui payons l'amende.
+        </p>
+
+        {/* Comparison cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
+          {/* Sans ICPP */}
+          <div className="rounded-2xl bg-[#F4F6F9] p-7 lg:p-9 flex flex-col">
+            <p className="text-[#001947]/50 text-sm font-medium text-center mb-6">Sans ICPP</p>
+            <ul className="flex flex-col gap-4">
+              {withoutICPP.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  {/* Red X circle */}
+                  <span className="flex-shrink-0 mt-0.5">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                      <circle cx="11" cy="11" r="11" fill="#FF4D4D" />
+                      <path d="M7.5 7.5l7 7M14.5 7.5l-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                  <span className="text-[#001947] text-sm lg:text-base leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Avec ICPP */}
+          <div className="rounded-2xl bg-white border border-[#E8EFF8] p-7 lg:p-9 flex flex-col shadow-sm">
+            {/* Logo + title */}
+            <div className="flex items-center gap-3 mb-6">
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{ background: "linear-gradient(235deg, #1780FD 19.43%, #002ABD 90.81%)" }}
+              >
+                <svg width="26" height="22" viewBox="0 0 39 33" fill="none">
+                  <path d="M8.76072 0.50611C9.12338 0.180397 9.59532 0 10.0848 0H32.8738C33.3792 0 33.8653 0.192358 34.2318 0.53735L37.9971 4.08231C38.8154 4.85268 38.8154 6.14524 37.9971 6.9156L12.0394 31.3359C11.2806 32.0496 10.0915 32.0518 9.33002 31.3409L5.46755 27.735C4.65104 26.9728 4.63986 25.6899 5.44297 24.9138L16.1735 14.5438C17.4397 13.3202 16.5655 11.1909 14.797 11.1909H1.97567C0.171967 11.1909 -0.684888 8.98933 0.651632 7.78898L8.76072 0.50611Z" fill="white"/>
+                  <path d="M28.2096 18.6377C28.2096 18.189 28.3655 17.7539 28.651 17.4056L29.1156 16.8389C29.3431 16.5615 29.6845 16.4004 30.0452 16.4004C30.3656 16.4004 30.6726 16.5276 30.8977 16.7536L37.3759 23.2581C37.7401 23.6238 37.9443 24.1169 37.9443 24.6307V30.268C37.9443 31.3471 37.0615 32.222 35.9726 32.222H30.1813C29.0924 32.222 28.2096 31.3471 28.2096 30.268V18.6377Z" fill="white"/>
+                </svg>
+              </div>
+              <span className="text-[#001947] font-semibold text-base">Avec ICPP</span>
+            </div>
+
+            <ul className="flex flex-col gap-4 mb-8">
+              {withICPP.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  {/* Blue checkmark circle */}
+                  <span className="flex-shrink-0 mt-0.5">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                      <circle cx="11" cy="11" r="11" fill="#EDF4FF" />
+                      <path d="M6.5 11.5l3 3 6-6" stroke="#1780FD" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span className="text-[#001947] text-sm lg:text-base leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* CTA button */}
+            <div className="btn-cta-wrapper rounded-full p-2 mt-auto">
+              <button className="btn-cta w-full h-14 rounded-full border-[3px] border-white/30 text-[#00162D] font-semibold text-base flex items-center justify-center gap-3 hover:opacity-95 transition-opacity">
+                Démarrer le mini-audit
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                  <path d="M8.57895 20L7 18.5L13.8421 12L7 5.5L8.57895 4L17 12L8.57895 20Z" fill="url(#arrow_promo)" />
+                  <defs>
+                    <linearGradient id="arrow_promo" x1="12" y1="4" x2="12" y2="20" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="white" />
+                      <stop offset="1" stopColor="#9FF4FF" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
